@@ -1,8 +1,6 @@
-import 'package:barker_tour/data/constants.dart';
-import 'package:barker_tour/presentation/pages/home_page.dart';
+import 'package:barker_tour/presentation/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 CustomTransitionPage _buildPageWithDefaultTransition<T>({
   required BuildContext context,
@@ -35,6 +33,7 @@ class Route {
 }
 
 enum Routes {
+  splash(path: '/splash', name: 'Splash', icon: Icons.home),
   home(path: '/home', name: 'Inicio', icon: Icons.home);
 
   final String path;
@@ -49,23 +48,21 @@ enum Routes {
 }
 
 final router = GoRouter(
-  initialLocation: Routes.home.path,
+  initialLocation: Routes.splash.path,
   routes: [
+    GoRoute(
+      path: Routes.splash.path,
+      name: Routes.splash.name,
+      pageBuilder: (context, state) {
+        return _buildPageWithDefaultTransition<void>(context: context, state: state, child: const SplashPage());
+      },
+    ),
     GoRoute(
       path: Routes.home.path,
       name: Routes.home.name,
       pageBuilder: (context, state) {
-        return _buildPageWithDefaultTransition<void>(context: context, state: state, child: const HomePage());
+        return _buildPageWithDefaultTransition<void>(context: context, state: state, child: const SplashPage());
       },
     ),
   ],
-  redirect: (context, state) async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    final user = sharedPreferences.getString(DataConstants.userKey);
-    if (user == null) {
-      return Routes.home.path;
-    }
-
-    return null;
-  },
 );

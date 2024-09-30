@@ -13,8 +13,8 @@ const kPaddingAppHorizontalVerySmall = EdgeInsets.symmetric(horizontal: 8.0);
 const kPaddingAppVertical = EdgeInsets.symmetric(vertical: 24.0);
 const kPaddingAppVerticalLarge = EdgeInsets.symmetric(vertical: 48.0);
 const kPaddingAppVerticalSmall = EdgeInsets.symmetric(vertical: 16.0);
-const kRadiusCornerOutside = 6.0;
-const kRadiusCornerInside = 4.0;
+const kRadiusCornerOutside = 54.0;
+const kRadiusCornerInside = 48.0;
 var kShadow = BoxShadow(
   color: colorScheme.shadow,
   blurRadius: 5,
@@ -80,30 +80,32 @@ final dataTableDecoration = {
 final ColorScheme colorScheme = ColorScheme.fromSeed(
   brightness: Brightness.dark,
   seedColor: const Color(0xFF000000),
-  primary: const Color(0xFF083163),
-  primaryContainer: const Color(0xffffffff),
+  primary: const Color(0xFF000000),
+  primaryContainer: const Color.fromRGBO(28, 28, 30, 1),
+  primaryFixed: const Color(0xff000000).withOpacity(0.6),
+  primaryFixedDim: const Color(0xff000000).withOpacity(0.3),
   onPrimary: const Color(0xFFFFFFFF),
   onPrimaryContainer: const Color(0xff000000),
-  secondary: const Color(0xff08633A),
+  secondary: const Color(0xffFFFFFF),
   secondaryContainer: const Color(0xff000000),
-  onSecondary: const Color(0xffFFFFFF),
+  secondaryFixed: const Color(0xffFFFFFF).withOpacity(0.6),
+  onSecondary: const Color(0xff000000),
   onSecondaryContainer: const Color(0xffFFFFFF),
-  tertiary: const Color(0xff546881),
-  tertiaryContainer: const Color(0xFFEAEDF1),
-  tertiaryFixed: const Color(0xFFA3ADBB).withOpacity(0.7),
+  tertiary: const Color(0xff4E4E4E),
+  tertiaryFixed: const Color(0xFFFFFFFF).withOpacity(0.5),
+  tertiaryContainer: const Color.fromRGBO(28, 28, 30, 1),
   onTertiary: const Color(0xffFFFFFF),
-  onTertiaryContainer: const Color(0xff000000),
+  onTertiaryContainer: const Color.fromARGB(255, 255, 255, 255),
   inversePrimary: const Color(0xFF0D0D0D),
   inverseSurface: const Color(0xFF1C1C1C),
-  outline: const Color(0xFFA3ADBB).withOpacity(0.2),
+  outline: const Color(0xFF4E4E4E),
   outlineVariant: const Color(0xFFFFFFFF),
-  error: const Color(0xFFE52C2C),
+  error: const Color(0xFFFF2500),
   errorContainer: const Color(0xFFFFD8E4),
   onError: const Color(0xFFFFFFFF),
-  surface: const Color(0xFFFFFFFF),
-  surfaceTint: const Color(0xFFE5E5E5),
-  onSurface: const Color(0xFF000000),
-  shadow: const Color(0xFF000000),
+  surface: const Color(0xFF000000),
+  onSurface: const Color(0xFFFFFFFF),
+  shadow: Colors.black54,
 );
 
 extension ColorSchemeExtension on ColorScheme {

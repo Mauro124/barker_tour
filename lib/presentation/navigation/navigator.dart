@@ -1,7 +1,8 @@
 import 'package:barker_tour/presentation/navigation/routes.dart';
 
 class AppNavigator {
-  static goToLogin() => router.go(Routes.home.path);
+  static goToSplash() => router.go(Routes.splash.path);
+  static goToHome() => router.go(Routes.home.path);
   static goBack() => router.pop();
   static goToUrl(String url) async {
     // Uri uri = Uri.parse(url);

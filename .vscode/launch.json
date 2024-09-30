@@ -4,22 +4,23 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "barker_tour",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "barker_tour (profile mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "barker_tour (release mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        }
+      {
+        "name": "LOCAL",
+        "request": "launch",
+        "type": "dart",
+        "program": "lib/main_local.dart",
+      },
+      {
+        "name": "DEV",
+        "request": "launch",
+        "type": "dart",
+        "program": "lib/main_dev.dart"
+      },
+      {
+        "name": "PROD",
+        "request": "launch",
+        "type": "dart",
+        "program": "lib/main_production.dart"
+      }
     ]
-}
+  }

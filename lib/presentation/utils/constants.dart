@@ -1,3 +1,7 @@
+class Assets {
+  static const String splashVideo = 'assets/videos/splash.mp4';
+}
+
 class Texts {
   // General
   static const String appName = 'Barker y Villa Cacique';
